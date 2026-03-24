@@ -1,201 +1,180 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Beltza Experience — La Última Frontera del Alma. Azken Muga of Soul. Doneztebe, Nafarroa.">
-    <title>BELTZA EXPERIENCE — MANIFIESTO</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Bebas+Neue&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BELTZA EXPERIENCE — LA ÚLTIMA FRONTERA DEL ALMA</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+    :root {
+        --black: #0a0a0a;
+        --white: #f2ede6;
+        --red: #b01a1a;
+        --amber: #c8922a;
+        --muted: #6b6155;
+        --sapphire: #0F52BA;
+    }
+    body {
+        background-color: var(--black);
+        color: var(--white);
+        font-family: 'Courier Prime', monospace;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+    }
+    /* El ruido visual de fondo para que no sea plano */
+    body::after {
+        content: ""; position: fixed; inset: 0;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
+        pointer-events: none; z-index: 9999;
+    }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 2rem; }
     
-    <style>
-        /* CSS INTEGRADO - Estilo Atapuerca: Puro y Resistente */
-        *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-        :root {
-            --black: #0a0a0a;
-            --white: #f2ede6;
-            --beltza-red: #b01a1a;
-            --amber: #c8922a;
-            --muted: #6b6155;
-            --sapphire: #0F52BA;
-            --font-heading: 'Playfair Display', serif;
-            --font-mono: 'Courier Prime', monospace;
-        }
-        body {
-            background: var(--black);
-            color: var(--white);
-            font-family: var(--font-mono);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+    /* Cabecera Estilo Tabla Original */
+    .header-table { width: 100%; border-collapse: collapse; margin-bottom: 2rem; border-bottom: 1px solid var(--red); }
+    .header-table td { padding: 1rem; vertical-align: bottom; }
+    .header-logo-text { font-family: 'Bebas Neue'; font-size: 1.2rem; letter-spacing: 0.2em; }
+    
+    /* El "Slash" Rojo */
+    .brand-block { background: var(--red); color: var(--black); padding: 2rem; margin: 2rem 0; display: inline-block; width: 100%; }
+    .brand-block h1 { font-family: 'Bebas Neue'; font-size: clamp(3rem, 10vw, 6rem); line-height: 0.9; margin: 0; letter-spacing: -0.02em; }
+    .brand-sub { font-family: 'Playfair Display'; font-style: italic; font-weight: 900; font-size: 1.5rem; color: var(--white); margin-top: 0.5rem; }
 
-        /* FRANJAS ROJAS */
-        .topband, .bottomband {
-            background-color: var(--beltza-red);
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .topband-logo, .bottom-text {
-            font-family: 'Bebas Neue', sans-serif;
-            letter-spacing: 0.15em;
-            color: var(--black);
-            font-size: clamp(1rem, 2vw, 1.4rem);
-        }
+    /* Secciones de Mandamientos */
+    .mandamiento { margin: 6rem 0; border-left: 1px solid var(--muted); padding-left: 2rem; position: relative; }
+    .m-num { font-family: 'Playfair Display'; font-size: 5rem; color: var(--red); font-weight: 900; position: absolute; left: -3rem; top: -2rem; opacity: 0.3; }
+    .m-title { font-family: 'Bebas Neue'; font-size: 2.5rem; color: var(--amber); letter-spacing: 0.1em; margin-bottom: 1rem; }
+    .m-body { font-size: 1.1rem; max-width: 800px; }
+    .m-quote { font-style: italic; color: var(--amber); margin-top: 1.5rem; display: block; border-left: 2px solid var(--amber); padding-left: 1rem; }
 
-        /* MANDAMIENTOS */
-        .mandamientos { margin: 60px 0; }
-        .mandamiento-item {
-            display: flex;
-            gap: 30px;
-            margin-bottom: 50px;
-            align-items: flex-start;
-        }
-        .m-num {
-            font-family: var(--font-heading);
-            font-size: 3rem;
-            color: var(--beltza-red);
-            font-weight: 900;
-            line-height: 1;
-        }
-        .m-content h3 {
-            font-family: 'Bebas Neue', sans-serif;
-            color: var(--amber);
-            letter-spacing: 0.2em;
-            margin-bottom: 10px;
-            font-size: 1.5rem;
-        }
+    /* Listado de géneros - El ruido de Beltza */
+    .genre-cloud { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.2em; margin: 2rem 0; border-top: 1px solid #222; padding-top: 1rem; }
 
-        /* SECCIÓN IDIOMAS - EL CORAZÓN POLÍGLOTA */
-        .languages-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin: 60px 0;
-            border-top: 1px solid rgba(242,237,230,0.1);
-            padding-top: 40px;
-        }
-        .lang-item h4 {
-            font-family: 'Bebas Neue', sans-serif;
-            color: var(--amber);
-            letter-spacing: 0.1em;
-            margin-bottom: 5px;
-        }
-        .lang-item h5 { font-family: var(--font-heading); font-size: 1.2rem; margin-bottom: 10px; }
-        .lang-item p { font-size: 0.9rem; color: var(--white); opacity: 0.9; }
+    /* Grid de Idiomas */
+    .lang-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; margin-top: 4rem; }
+    .lang-item { border-top: 1px solid var(--red); padding-top: 1rem; }
+    .lang-item h4 { font-family: 'Bebas Neue'; color: var(--amber); }
 
-        /* IMÁGENES Y SELLOS */
-        .img-fluid { width: 100%; height: auto; border: 1px solid rgba(255,255,255,0.1); }
-        .circular-seal {
-            border-radius: 50%;
-            border: 2px solid var(--white);
-            box-shadow: 0 0 15px rgba(0,0,0,0.5);
-            object-fit: cover;
-        }
-    </style>
+    /* Imagen con Marco */
+    .img-frame { border: 1px solid var(--muted); padding: 10px; background: rgba(255,255,255,0.03); display: inline-block; max-width: 100%; }
+    .img-frame img { max-width: 100%; height: auto; display: block; }
+
+    /* PI Anillo Azul */
+    .pi-circle { border: 10px solid var(--sapphire); border-radius: 50%; width: 250px; height: 250px; object-fit: cover; box-shadow: 0 0 40px rgba(15,82,186,0.3); }
+
+    footer { background: var(--red); color: var(--black); padding: 3rem 2rem; margin-top: 8rem; font-family: 'Bebas Neue'; }
+</style>
 </head>
 <body>
 
-<div class="topband">
-    <div class="topband-logo">
-        BELTZA RECORDS <span style="opacity:0.5">|</span> EST. 1990
-    </div>
-    <img src="beltza-puno.png" alt="Sello" style="height: 35px; width: auto;">
-</div>
-
 <div class="container">
-    <header style="text-align: center; margin: 80px 0;">
-        <h1 style="font-family: var(--font-heading); font-size: clamp(3.5rem, 12vw, 7rem); line-height: 0.85; margin-bottom: 20px;">MANIFIESTO<br>BELTZA</h1>
-        <p style="font-family: var(--font-heading); color: var(--amber); letter-spacing: 0.4em; text-transform: uppercase; font-size: 0.9rem;">La Última Frontera del Alma</p>
-    </header>
+    <table class="header-table">
+        <tr>
+            <td class="header-logo-text">BELTZA RECORDS · DONOSTIA _ DONEZTEBE</td>
+            <td style="text-align: right; font-size: 0.8rem; letter-spacing: 0.1em;">DESDE · TIK · DES · DE · SINCE · から · 1990</td>
+        </tr>
+    </table>
 
-    <div class="mandamientos">
-        <div class="mandamiento-item">
-            <div class="m-num">I</div>
-            <div class="m-content"><h3>ORIGEN</h3><p>Nacidos en la resistencia cultural de 1990. No somos una tienda, somos una misión de rescate para el alma a través del sonido.</p></div>
-        </div>
-        <div class="mandamiento-item">
-            <div class="m-num">II</div>
-            <div class="m-content"><h3>EL RITUAL</h3><p>El vinilo no es un objeto de consumo, es un documento antropológico. La aguja es el bisturí que libera la verdad.</p></div>
-        </div>
-        <div class="mandamiento-item">
-            <div class="m-num">III</div>
-            <div class="m-content"><h3>AZKEN MUGA</h3><p>Desde el corazón de Euskal Herria, exploramos los límites del sonido y el diseño. Nuestra frontera es el infinito.</p></div>
-        </div>
-        <div class="mandamiento-item">
-            <div class="m-num">IV</div>
-            <div class="m-content"><h3>ACCIÓN DIGITAL DIRECTA</h3><p>Utilizamos la tecnología para amplificar lo humano, nunca para sustituirlo. Código y Espíritu unidos.</p></div>
-        </div>
-        <div class="mandamiento-item">
-            <div class="m-num">V</div>
-            <div class="m-content">
-                <h3>CARA A: CONTRACULTURA / CARA B: HUMANISMO</h3>
-                <div style="display: flex; gap: 20px; margin-top: 20px;">
-                    <img src="logo-beltzarecords.jpg" class="circular-seal" style="width: 100px; height: 100px;">
-                    <img src="logo-beltzaexperience.jpg" class="circular-seal" style="width: 100px; height: 100px;">
-                </div>
-            </div>
+    <div class="brand-block">
+        <h1>BELTZA<br>EXPERIENCE</h1>
+        <div class="brand-sub">ARE YOU EXPERIENCED · AZKEN MUGA OF SOUL</div>
+    </div>
+
+    <div style="margin: 4rem 0;">
+        <h2 style="font-family:'Playfair Display'; font-size: 3rem; font-style: italic;">La Última Frontera del Alma</h2>
+        <p style="font-size: 1.3rem; max-width: 700px; margin-top: 1rem;">Una misión dedicada a explorar la cultura popular e investigar la antropología contemporánea.</p>
+    </div>
+
+    <div class="genre-cloud">
+        SOUL · JAZZ · R&B · PUNK · REGGAE · BLUES · CÓMICS · FOTOGRAFÍA · GASTRONOMÍA · ELECTRO CUMBIA AMAZÓNICA · CULTURA POPULAR · ANTROPOLOGÍA · SOUL · JAZZ · R&B · PUNK · REGGAE · BLUES · CÓMICS · FOTOGRAFÍA · GASTRONOMÍA · ELECTRO CUMBIA AMAZÓNICA
+    </div>
+
+    <div class="mandamiento">
+        <span class="m-num">01</span>
+        <h3 class="m-title">La cultura popular no es menor. Es el origen.</h3>
+        <div class="m-body">
+            <p>El Blues nació en el delta del Mississippi. El Jazz en los burdeles de Nueva Orleans. El Punk en los garajes sin calefacción. Toda gran revolución cultural empieza donde nadie mira. Los discos son el objeto por excelencia: puedes adquirir una obra maestra por un precio popular.</p>
+            <p style="margin-top:1rem">Somos contenedores de la belleza que los humanos hemos creado con el poder que el Cosmos ha depositado en nosotros. Emmanuelle, Pérez Prado, la Electro Cumbia de Conciencia Resistente... no hay géneros menores, hay discos que todavía no has escuchado.</p>
+            <span class="m-quote">"Con Bowie nos acostaremos, con Japan despertaremos y con los Heartbreakers arderemos."</span>
         </div>
     </div>
 
-    <div style="text-align: center; margin-bottom: 40px;">
-        <h2 style="font-family: var(--font-heading); color: var(--amber); letter-spacing: 0.2em; font-size: 1.4rem;">AZKEN MUGA · IDIOMAS</h2>
+    <div class="mandamiento">
+        <span class="m-num">02</span>
+        <h3 class="m-title">No soy coleccionista. Soy un yonqui.</h3>
+        <div class="m-body">
+            <p>Un acumulador. Empecé a los 5 años y nunca paré. Detrás de cada portada hay fotografía, diseño, música: todas las artes reunidas. Los discos me han enseñado todo lo que la universidad no pudo.</p>
+            <p style="margin-top:1rem">La Zenit 122K soviética, el "Peasants, Pigs & Astronauts" de Kula Shaker, el "Cézanne" de Bernard Dorival... El objeto fascinante no entiende de categorías.</p>
+        </div>
     </div>
 
-    <div class="languages-grid">
+    <div class="mandamiento">
+        <span class="m-num">03</span>
+        <h3 class="m-title">La ciudad agota. El valle escucha.</h3>
+        <div class="m-body">
+            <p>El éxodo ha comenzado. Babilonia nos embruteció bajo falsas palmeras. Trasladamos décadas de esfuerzo desde el asfalto de San Sebastián a los robles de Malerreka. No por capricho — por convicción.</p>
+            <p style="margin-top:1rem">Xabatenea Etxea, una casa del siglo XVI. La Experiencia solo puede ocurrir aquí. Porque hay cosas que solo se revelan en silencio: el groove de un soul del 65 o el olor a Terras Mancas recién abierto.</p>
+        </div>
+    </div>
+
+    <div style="text-align: center; margin: 5rem 0;">
+        <div class="img-frame">
+            <img src="jardines-jupiter.jpg" alt="Jardines de Júpiter">
+        </div>
+        <p style="font-family:'Bebas Neue'; color:var(--amber); letter-spacing:0.4em; margin-top:1.5rem;">— RASTRO DE JÚPITER EN EL JARDÍN —</p>
+    </div>
+
+    <h2 style="font-family:'Bebas Neue'; font-size: 3rem; border-bottom: 2px solid var(--red); display: inline-block;">AZKEN MUGA · IDIOMAS</h2>
+    
+    <div class="lang-grid">
         <div class="lang-item">
             <h4>ESPAÑOL · ES</h4>
-            <h5>La Última Frontera del Alma</h5>
-            <p>Una misión dedicada a explorar la cultura popular e investigar la antropología contemporánea. Somos contenedores de la belleza. Are You Experienced.</p>
+            <p><strong>La Última Frontera del Alma</strong>. Una misión dedicada a explorar la cultura popular e investigar la antropología contemporánea. Somos contenedores de la belleza. Are You Experienced.</p>
         </div>
         <div class="lang-item">
             <h4>EUSKERA · EU</h4>
-            <h5>Arimaren Azken Muga</h5>
-            <p>Kultura herrikoia aztertu eta antropologia garaikidea ikertzeko eginkizun bat. Gizakiok sortutako edertasunaren ontziak gara. Are You Experienced.</p>
+            <p><strong>Arimaren Azken Muga</strong>. Kultura herrikoia aztertu eta antropologia garaikidea ikertzeko eginkizun bat. Gizakiok sortutako edertasunaren ontziak gara. Are You Experienced.</p>
         </div>
         <div class="lang-item">
             <h4>ENGLISH · EN</h4>
-            <h5>The Last Frontier of the Soul</h5>
-            <p>A mission dedicated to exploring popular culture and investigating contemporary anthropology. We are containers of beauty. Are You Experienced.</p>
+            <p><strong>The Last Frontier of the Soul</strong>. A mission dedicated to exploring popular culture and investigating contemporary anthropology. We are containers of beauty. Are You Experienced.</p>
         </div>
         <div class="lang-item">
             <h4>日本語 · JA</h4>
-            <h5>魂の最後のフロンティア</h5>
-            <p>大衆文化を探求し、現代人類学を研究するためのミッション。私たちは、人間が創り出した美の容れ物である。Are You Experienced.</p>
+            <p><strong>魂の最後のフロンティア</strong>。大衆文化を探求し、現代人類学を研究するためのミッション。私たちは、人間が創り出した美の容れ物である。Are You Experienced.</p>
         </div>
         <div class="lang-item">
             <h4>MAYAN · YUA</h4>
-            <h5>U xookol pixan</h5>
-            <p>Jump'éel misión ti' u xokol cultura popular yéetel u kajtalil antropología contemporánea. Are You Experienced.</p>
+            <p><strong>U xookol pixan</strong>. Jump'éel misión ti' u xokol cultura popular yéetel u kajtalil antropología contemporánea. Are You Experienced.</p>
         </div>
         <div class="lang-item">
-            <h4>AMHÁRICO · AM</h4>
-            <h5>የነፍስ መጨረሻ ድንበር</h5>
-            <p>ለሕዝባዊ ባህል ምርምርና ዘመnaዊ አንትሮፖሎጂ ጥናት ያደረ ተልዕኮ። Are You Experienced.</p>
+            <h4>አማርኛ · AM</h4>
+            <p><strong>የነፍስ መጨረሻ ድንበር</strong>. ለሕዝባዊ ባህል ምርምርና ዘመናዊ አንትሮፖሎጂ ጥናት ያደረ ተልዕኮ። Are You Experienced.</p>
         </div>
     </div>
 
-    <div style="margin: 80px 0; text-align: center;">
-        <img src="jardines-jupiter.jpg" class="img-fluid" style="max-width: 900px;">
-        <p style="margin-top: 15px; font-family: var(--font-heading); color: var(--amber); letter-spacing: 0.2em; font-size: 0.8rem;">— RASTRO DE JÚPITER EN EL JARDÍN —</p>
-    </div>
-
-    <div style="text-align: center; margin: 100px 0;">
-        <h2 style="font-family: var(--font-heading); color: var(--amber); letter-spacing: 0.4em; margin-bottom: 40px;">13 CREDO</h2>
-        <img src="PI.jpeg" alt="PI" style="width: 200px; height: 200px; border-radius: 50%; border: 8px solid var(--sapphire); box-shadow: 0 0 30px rgba(15, 82, 186, 0.4); object-fit: cover;">
+    <div style="margin-top: 10rem; text-align: center; border-top: 1px double var(--muted); padding-top: 5rem;">
+        <h2 style="font-family:'Bebas Neue'; font-size: 4rem; letter-spacing: 0.3em; margin-bottom: 2rem;">13 EL CREDO</h2>
+        <img src="PI.jpeg" class="pi-circle" alt="PI">
+        <div style="max-width: 700px; margin: 2rem auto; font-size: 0.9rem; text-align: justify; color: var(--muted);">
+            π · 3,14159265358979323846... · AMOR. La vida como único propósito de la materia. La evolución cósmica transformó las matemáticas en sentimientos. El último decimal del círculo es AMOR. Vascos irracionales.
+        </div>
     </div>
 </div>
 
-<div class="bottomband">
-    <div class="bottom-text">BELTZA RECORDS | DONOSTIA</div>
-    <div style="display: flex; align-items: center; gap: 15px;">
-        <span style="font-family: var(--font-heading); font-size: 0.7rem; text-transform: uppercase; color: var(--black); font-weight: bold;">Ultramarinos Parroquia 13</span>
-        <img src="logo-trece.png" alt="13" style="height: 45px; width: auto;">
+<footer>
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center; padding:0;">
+        <div>
+            BELTZA RECORDS | DONOSTIA<br>
+            43°07'55"N · 2°01'05"O · Xabatenea Etxea
+        </div>
+        <div style="text-align: right;">
+            ULTRAMARINOS PARROQUIA 13<br>
+            <span style="font-size: 2rem;">13</span>
+        </div>
     </div>
-</div>
+</footer>
 
 </body>
 </html>
