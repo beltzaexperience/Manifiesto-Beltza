@@ -1,3 +1,4 @@
+<style> 
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 :root {
   --black: #0a0a0a;
@@ -477,7 +478,8 @@ footer {
 }
 footer p { font-size:0.8rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--muted); text-align:center; }
 .footer-langs { font-size:0.8rem; letter-spacing:0.15em; color: #444; text-align:center; }
-.footer-langs a { color:var(--red); text-decoration:none; }
+.footer-langs a { color:var(--red); text-decoration:none; } 
+</style>
 .footer-langs a:hover { color:var(--amber); }
 footer a { color:var(--red); text-decoration:none; font-size:0.8rem; letter-spacing:0.2em; text-transform:uppercase; }
 ::selection { background:var(--red); color:var(--white); }
