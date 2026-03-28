@@ -36,75 +36,33 @@
   .credo-occult .eh { font-size: 1em; letter-spacing: inherit; }
   .credo-occult .origin { font-size: 1.1rem; }
   .credo-frontón { font-size: 1.1rem; }
-  .credo-pi-line { font-size: 1.3rem !important; }
-  .credo-label { font-size: 1.2rem !important; }
+  .credo-pi-line { font-size: 1.3rem; }
+  .credo-label { font-size: 1.2rem; }
   .section-label { font-size: 1.3rem; }
   .idiomas-label { font-size: 1.3rem; }
 
   /* LAYOUT DOS COLUMNAS MANDAMIENTOS */
-  .mandamientos-layout {
-    display: flex !important;
-    align-items: stretch;
-    gap: 0;
-    width: 100%;
-    position: relative;
-    overflow: hidden;
-  }
-  .mandamientos-col-texto {
-    width: 800px;
-    min-width: 800px;
-    flex-shrink: 0;
-  }
-  .mandamientos-col-fotos {
-    position: absolute;
-    top: 0;
-    bottom: 6rem;
-    left: 800px;
-    right: 0;
-    padding: 2rem 1.5rem;
-    overflow-y: scroll;
-    scrollbar-width: none;
-    border-bottom: 2px solid var(--red);
-  }
+  .mandamientos-layout { display: flex !important; align-items: stretch; gap: 0; width: 100%; position: relative; overflow: hidden; }
+  .mandamientos-col-texto { width: 800px; min-width: 800px; flex-shrink: 0; }
+  .mandamientos-col-fotos { position: absolute; top: 0; bottom: 6rem; left: 800px; right: 0; padding: 2rem 1.5rem; overflow-y: scroll; scrollbar-width: none; border-bottom: 2px solid var(--red); }
   .mandamientos-col-fotos::-webkit-scrollbar { display: none; }
-  .sidebar-foto {
-    width: 100%;
-    display: block;
-    filter: contrast(1.05);
-  }
-  .sidebar-figura {
-    margin: 0 0 2rem 0;
-    border: 1px solid #1e1e1e;
-  }
-  .sidebar-pie {
-    font-family: 'Courier Prime', monospace;
-    font-size: 0.85rem;
-    letter-spacing: 0.12em;
-    color: var(--muted);
-    padding: 0.5rem 0.7rem;
-    border-top: 1px solid #1e1e1e;
-    background: #0d0d0d;
-  }
+  .sidebar-foto { width: 100%; display: block; filter: contrast(1.05); }
+  .sidebar-figura { margin: 0 0 2rem 0; border: 1px solid #1e1e1e; }
+  .sidebar-pie { font-family: 'Courier Prime', monospace; font-size: 0.85rem; letter-spacing: 0.12em; color: var(--muted); padding: 0.5rem 0.7rem; border-top: 1px solid #1e1e1e; background: #0d0d0d; }
   .sidebar-pie a { color: var(--amber); text-decoration: none; }
   .sidebar-pie a:hover { color: var(--white); }
 
-  /* SELECTOR MÓVIL — oculto en desktop */
-  .selector-movil {
-    display: none;
-    font-family: 'Bebas Neue', Impact, 'Arial Narrow', sans-serif;
-    font-size: clamp(0.95rem,2vw,1.3rem);
-    letter-spacing: 0.15em;
-    background: var(--black);
-    color: var(--amber);
-    border: 1px solid #333;
-    padding: 0.1em 0.4em;
-    cursor: pointer;
-    outline: none;
-  }
-  .selector-movil option {
-    background: var(--black);
-    color: var(--amber);
-  }
+  /* PORTADAS MARQUEE */
+  .portadas-marquee { overflow: hidden; width: 100%; background: var(--black); border-top: 10px solid var(--red); border-bottom: 10px solid var(--red); }
+  .band, .portadas-marquee { cursor: pointer; }
+  .portadas-inner { display: flex; animation: portadas-scroll 40s linear infinite; will-change: transform; }
+  .portadas-inner img { height: 240px; width: auto; flex-shrink: 0; display: block; margin-right: 1rem; filter: contrast(1.05); transition: filter 0.3s; }
+  .portadas-inner img:hover { filter: contrast(1.15) grayscale(0); }
+  @keyframes portadas-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* SELECTOR MÓVIL */
+  .selector-movil { display: none; font-family: 'Bebas Neue', Impact, 'Arial Narrow', sans-serif; font-size: clamp(0.95rem,2vw,1.3rem); letter-spacing: 0.15em; background: var(--black); color: var(--amber); border: 1px solid #333; padding: 0.1em 0.4em; cursor: pointer; outline: none; }
+  .selector-movil option { background: var(--black); color: var(--amber); }
 
   @media (max-width: 800px) {
     .mandamientos-layout { flex-direction: column; }
@@ -537,14 +495,6 @@
 
 </section>
 
-<style>
-  .portadas-marquee { overflow: hidden; width: 100%; background: var(--black); border-top: 10px solid var(--red); border-bottom: 10px solid var(--red); }
-  .band, .portadas-marquee { cursor: pointer; }
-  .portadas-inner { display: flex; animation: portadas-scroll 40s linear infinite; will-change: transform; }
-  .portadas-inner img { height: 240px; width: auto; flex-shrink: 0; display: block; margin-right: 1rem; filter: contrast(1.05); transition: filter 0.3s; }
-  .portadas-inner img:hover { filter: contrast(1.15) grayscale(0); }
-  @keyframes portadas-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-</style>
 
 <div class="portadas-marquee" aria-hidden="true">
   <div class="portadas-inner">
@@ -614,19 +564,21 @@
   <img src="https://live.staticflickr.com/65535/55170955237_80ec8c3d1d_k.jpg" alt="14 · UR-SAPIENS · Jorge Oteiza" style="width:100%; height:auto; display:block; filter:contrast(1.05);">
 </a>
 <div style="background:var(--black); padding:0.8rem clamp(1.5rem,4vw,3rem); text-align:center; border-bottom:1px solid rgba(176,26,26,0.25);">
-  <span style="font-family:'Courier Prime',monospace; font-size:0.9rem; letter-spacing:0.2em; color:var(--amber);">· Arantzazu · Jorge Oteiza · El Último Apóstol · Díscolo · Inadaptado · Desubicado de cualquier credo ·</span>
+  <span style="font-family:'Courier Prime',monospace; font-size:0.9rem; letter-spacing:0.2em; color:var(--amber);">· Arantzazu · Jorge Oteiza · El Último Apóstol · Díscolo · Inadaptado · Desubicado de cualquier credo · Foto: Luis Beltza ·</span>
 </div>
 
 <!-- 14 UR-SAPIENS -->
-<section class="credo" id="ur-sapiens">
+<section class="credo" id="ur-sapiens" style="text-align:right;">
   <div class="credo-header">
     <span class="credo-number">14</span>
     <span class="credo-title">UR-SAPIENS</span>
   </div>
   <p class="credo-label" style="font-size:1.2rem !important; letter-spacing:0.4em; text-transform:uppercase; color:#7a1212; margin-bottom:3rem;">El Último Apóstol</p>
 
+  <p class="credo-text">UR: TECHNOVISION Y COSMOGONÍA DE UN HALLAZGO DE PALEOLINGÜÍSTICA Y SU POSTERIOR U-SUR-PACIÓN SISTÉMICA.</p>
+
   <div style="margin-bottom:2.5rem; position:relative; z-index:1;">
-    <img src="https://beltzaexperience.github.io/Manifiesto-Beltza/UR-SAPIENS.png" alt="UR-SAPIENS · Símbolo · Luis Beltza" style="width:clamp(180px,28vw,320px); height:clamp(180px,28vw,320px); object-fit:contain; display:block;">
+    <img src="https://live.staticflickr.com/65535/55173125591_3066404ecb_o.png" alt="UR-SAPIENS · Símbolo · Luis Beltza" style="width:clamp(260px,40vw,480px); height:clamp(260px,40vw,480px); object-fit:contain; display:block; margin-left:auto;">
   </div>
   <div class="credo-pi-line">UR ± H₂O + CH₄ + NH₃ bajo 100.000 atmósferas = SAPIENS A PUNTO DE REÍR</div>
 
