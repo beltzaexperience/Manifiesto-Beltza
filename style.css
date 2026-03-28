@@ -482,3 +482,4 @@ footer p { font-size:0.8rem; letter-spacing:0.2em; text-transform:uppercase; col
 .footer-langs a:hover { color:var(--amber); }
 footer a { color:var(--red); text-decoration:none; font-size:0.8rem; letter-spacing:0.2em; text-transform:uppercase; }
 ::selection { background:var(--red); color:var(--white); }
+.credo-text { font-family: 'Bebas Neue', Impact, 'Arial Narrow', sans-serif; font-size: clamp(1.8rem,4vw,3.5rem); display: block !important; }
