@@ -27,8 +27,8 @@
   .hero-eyebrow { font-size: clamp(1rem,2vw,1.4rem); }
   .hero-subtitle { font-size: clamp(1.8rem,3.2vw,2.4rem); }
   .hero-sub { font-size: clamp(1.05rem,2vw,1.3rem); }
-  .m-quote { font-size: 1.1rem; line-height: 1.6; }
-  .m-quote--white { font-size: 1.1rem; line-height: 1.6; }
+  .m-quote { font-size: 1.2rem; line-height: 1.6; }
+  .m-quote--white { font-size: 1.2rem; line-height: 1.6; }
   .credo-sign-name { font-size: 2.2rem; }
   .credo-sign-sub { font-size: 1.1rem; }
   .credo-coords { font-size: 1.1rem; line-height: 1.9; }
@@ -37,41 +37,9 @@
   .credo-occult .origin { font-size: 1.1rem; }
   .credo-frontón { font-size: 1.1rem; }
   .credo-pi-line { font-size: 1.3rem; }
-  .credo-label { font-size: 1.2rem; }
+  .credo-label { font-size: 1.2rem !important; }
   .section-label { font-size: 1.3rem; }
   .idiomas-label { font-size: 1.3rem; }
-
-  /* LAYOUT DOS COLUMNAS MANDAMIENTOS */
-  .mandamientos-layout { display: flex !important; align-items: stretch; gap: 0; width: 100%; position: relative; overflow: hidden; }
-  .mandamientos-col-texto { width: 800px; min-width: 800px; flex-shrink: 0; }
-  .mandamientos-col-fotos { position: absolute; top: 0; bottom: 6rem; left: 800px; right: 0; padding: 2rem 1.5rem; overflow-y: scroll; scrollbar-width: none; border-bottom: 2px solid var(--red); }
-  .mandamientos-col-fotos::-webkit-scrollbar { display: none; }
-  .sidebar-foto { width: 100%; display: block; filter: contrast(1.05); }
-  .sidebar-figura { margin: 0 0 2rem 0; border: 1px solid #1e1e1e; }
-  .sidebar-pie { font-family: 'Courier Prime', monospace; font-size: 0.85rem; letter-spacing: 0.12em; color: var(--muted); padding: 0.5rem 0.7rem; border-top: 1px solid #1e1e1e; background: #0d0d0d; }
-  .sidebar-pie a { color: var(--amber); text-decoration: none; }
-  .sidebar-pie a:hover { color: var(--white); }
-
-  /* PORTADAS MARQUEE */
-  .portadas-marquee { overflow: hidden; width: 100%; background: var(--black); border-top: 10px solid var(--red); border-bottom: 10px solid var(--red); }
-  .band, .portadas-marquee { cursor: pointer; }
-  .portadas-inner { display: flex; animation: portadas-scroll 40s linear infinite; will-change: transform; }
-  .portadas-inner img { height: 240px; width: auto; flex-shrink: 0; display: block; margin-right: 1rem; filter: contrast(1.05); transition: filter 0.3s; }
-  .portadas-inner img:hover { filter: contrast(1.15) grayscale(0); }
-  @keyframes portadas-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-
-  /* SELECTOR MÓVIL */
-  .selector-movil { display: none; font-family: 'Bebas Neue', Impact, 'Arial Narrow', sans-serif; font-size: clamp(0.95rem,2vw,1.3rem); letter-spacing: 0.15em; background: var(--black); color: var(--amber); border: 1px solid #333; padding: 0.1em 0.4em; cursor: pointer; outline: none; }
-  .selector-movil option { background: var(--black); color: var(--amber); }
-
-  @media (max-width: 800px) {
-    .mandamientos-layout { flex-direction: column; }
-    .mandamientos-col-texto { width: 100%; min-width: 0; }
-    .mandamientos-col-fotos { display: none; padding: 0; }
-    .mandamientos-col-fotos.visible { display: block; }
-    .mandamientos-col-texto.oculto { display: none; }
-    .selector-movil { display: inline-block; }
-  }
 </style>
 </head>
 <body>
@@ -80,7 +48,7 @@
   <table style="width:100%; border-collapse:collapse;">
     <tr>
       <td style="font-family:'Bebas Neue',Impact,'Arial Narrow',sans-serif; font-size:clamp(0.95rem,2vw,1.3rem); letter-spacing:0.15em; color:var(--white); white-space:nowrap;">BELTZA RECORDS <span style="color:var(--muted);">·</span> DONOSTIA <span style="color:var(--muted);">_</span> DONEZTEBE</td>
-      <td style="font-family:'Bebas Neue',Impact,'Arial Narrow',sans-serif; font-size:clamp(0.95rem,2vw,1.3rem); letter-spacing:0.15em; text-align:right; white-space:nowrap;"><span style="color:var(--white);">DESDE</span> · <span style="color:#555;">TIK</span> · <span style="color:#555;">DES</span> · <span style="color:#555;">DÈS</span> · <span style="color:#555;">DE</span> · <span style="color:#555;">SINCE</span> · <span style="color:#555;">から</span> · 1990 · <select class="selector-movil" id="selector-vista" onchange="cambiarVista(this.value)"><option value="texto">TEXTO</option><option value="fotos">FOTOS</option></select></td>
+      <td style="font-family:'Bebas Neue',Impact,'Arial Narrow',sans-serif; font-size:clamp(0.95rem,2vw,1.3rem); letter-spacing:0.15em; color:var(--amber); text-align:right; white-space:nowrap;"><a href="manifiesto-es.html" style="color:var(--amber);text-decoration:none;font-family:'Bebas Neue',Impact,'Arial Narrow',sans-serif;font-size:clamp(0.95rem,2vw,1.3rem);letter-spacing:0.15em;" target="_blank">DESDE</a> · <a href="manifiesto-eu.html" style="color:var(--amber);text-decoration:none;font-family:'Bebas Neue',Impact,'Arial Narrow',sans-serif;font-size:clamp(0.95rem,2vw,1.3rem);letter-spacing:0.15em;" target="_blank">TIK</a> · <a href="manifiesto-ca.html" style="color:var(--amber);text-decoration:none;font-family:'Bebas Neue',Impact,'Arial Narrow',sans-serif;font-size:clamp(0.95rem,2vw,1.3rem);letter-spacing:0.15em;" target="_blank">DES</a> · <a href="manifiesto-fr.html" style="color:var(--amber);text-decoration:none;font-family:'Bebas Neue',Impact,'Arial Narrow',sans-serif;font-size:clamp(0.95rem,2vw,1.3rem);letter-spacing:0.15em;" target="_blank">DÈS</a> · <a href="manifiesto-pt.html" style="color:var(--amber);text-decoration:none;font-family:'Bebas Neue',Impact,'Arial Narrow',sans-serif;font-size:clamp(0.95rem,2vw,1.3rem);letter-spacing:0.15em;" target="_blank">DE</a> · <a href="manifiesto-en.html" style="color:var(--amber);text-decoration:none;font-family:'Bebas Neue',Impact,'Arial Narrow',sans-serif;font-size:clamp(0.95rem,2vw,1.3rem);letter-spacing:0.15em;" target="_blank">SINCE</a> · <a href="manifiesto-ja.html" style="color:var(--amber);text-decoration:none;font-family:'Bebas Neue',Impact,'Arial Narrow',sans-serif;font-size:clamp(0.95rem,2vw,1.3rem);letter-spacing:0.15em;" target="_blank">から</a> · 1990</td>
 
     </tr>
     <tr>
@@ -114,8 +82,6 @@
 
 <section class="mandamientos">
   <div class="section-label">Los Mandamientos</div>
-  <div class="mandamientos-layout">
-    <div class="mandamientos-col-texto" id="col-texto">
 
   <!-- M01 -->
   <div class="mandamiento">
@@ -167,7 +133,7 @@
   <div class="mandamiento">
     <div class="m-number">04</div>
     <div class="m-body">
-      <h2 class="m-title">Una persona.<br>Máximo dos.<br><span class="bold">La exclusividad no es precio.</span><br><span class="bold">Es economía de principios.</span></h2>
+      <h2 class="m-title">Una persona.<br>Máximo dos.<br><span class="bold">La exclusividad no es precio — es principio.</span></h2>
       <p class="m-text">No queremos llenar salas. Queremos vaciarte la cabeza. <strong>La Experiencia está diseñada para una persona, máximo dos.</strong> Para que puedas escuchar de verdad, preguntar de verdad, sentir de verdad. A menudo dicen que yo soy la experiencia. Soy muy teatral y se crea una conexión muy especial con cada persona que viene.</p>
       <p class="m-quote">"Si entras en el interior de la nave el viaje será universal."</p>
       <p class="m-quote">「プライベートルームにまで案内してくれて、たくさんレコード買えました！最後に記念撮影〜サンキュールイス☆ スペイン旅の中で1番タイプなレコ屋に出会えた模様！ランチ後にカムバックアゲイーン！！！」<br><span style="font-size:0.85em; color:var(--muted); letter-spacing:0.1em;">· Me llevaron a la sala privada y pude comprar un montón de discos. Al final nos hicimos una foto de recuerdo — ¡gracias Luis! ☆ La tienda de discos más a mi gusto de todo mi viaje por España. ¡Volví después de comer! ·</span><br>— Momoko Saegusa</p>
@@ -283,218 +249,17 @@
       <p class="m-quote--white">GREÑAS Y CHUPAS VAQUERAS!!!</p>
       <p class="m-quote">"Luis, que ha sido mod, punk, negro, locutor, ciclista, fotógrafo, industrial, teórico, práctico, soulmaster y siempre amigo... si estás por San Sebastián, haz lo que hacen cientos de visitantes de todo el globo: pásate por Beltza." — Alejandro Díaz Garín <span style="font-size:0.85em; color:var(--muted);">· Flechazos · Cooper · Fundación Club 45 ·</span></p>
     </div>
-  </div><!-- /M10 -->
-
-    </div><!-- /mandamientos-col-texto -->
-
-    <div class="mandamientos-col-fotos" id="col-fotos">
-      <div style="border-top: 2px solid var(--red); margin-bottom: 1.5rem;"></div>
-      <!-- FOTO 16 — EL AMANECER DE LA HUMANIDAD -->
-      <figure class="sidebar-figura">
-        <a href="https://www.flickr.com/gp/beltzascene2/XegBS5396D" target="_blank">
-          <img src="https://live.staticflickr.com/65535/55145805757_fb3c0f4443_h.jpg" alt="El Amanecer de la Humanidad en Doneztebe · Álvaro Matximbarrena" class="sidebar-foto">
-        </a>
-        <figcaption class="sidebar-pie">El Amanecer de la Humanidad en Doneztebe · 3001 Odisea de un Proyecto Extraterrestre · Álvaro Matximbarrena</figcaption>
-      </figure>
-      <!-- FOTO 15 — HUMOR Y AMANECER -->
-      <figure class="sidebar-figura">
-        <a href="https://www.flickr.com/gp/beltzascene2/c14Mp5Eu0b" target="_blank">
-          <img src="https://live.staticflickr.com/65535/55141643662_3a6b2e4a2c_h.jpg" alt="Humor y Amanecer · Álvaro Matximbarrena" class="sidebar-foto">
-        </a>
-        <figcaption class="sidebar-pie">Humor y Amanecer · Foto: Haiski · Retoque: Álvaro Matximbarrena · Compañía: Luis Beltza · Modelo: Chica de Plexiglás</figcaption>
-      </figure>
-      <!-- FOTO 14 -->
-      <figure class="sidebar-figura">
-        <a href="https://www.flickr.com/gp/beltzascene2/BQR6T6Kh9S" target="_blank">
-          <img src="https://live.staticflickr.com/65535/55141643697_17ba2c9bda_b.jpg" alt="Los 10 Mandamientos · Álvaro Matximbarrena" class="sidebar-foto">
-        </a>
-        <figcaption class="sidebar-pie">Los 10 Mandamientos · 01/13 · Álvaro Matximbarrena</figcaption>
-      </figure>
-      <!-- FOTO 13 -->
-      <figure class="sidebar-figura">
-        <a href="https://www.flickr.com/gp/beltzascene2/36v6bUAzt2" target="_blank">
-          <img src="https://live.staticflickr.com/65535/55142921380_49f9497856_b.jpg" alt="Los 10 Mandamientos · Álvaro Matximbarrena" class="sidebar-foto">
-        </a>
-        <figcaption class="sidebar-pie">Los 10 Mandamientos · 02/13 · Álvaro Matximbarrena</figcaption>
-      </figure>
-      <!-- FOTO 12 -->
-      <figure class="sidebar-figura">
-        <a href="https://www.flickr.com/gp/beltzascene2/CzF32wDC21" target="_blank">
-          <img src="https://live.staticflickr.com/65535/55141643747_0c0399c61a_h.jpg" alt="Los 10 Mandamientos · Álvaro Matximbarrena" class="sidebar-foto">
-        </a>
-        <figcaption class="sidebar-pie">Los 10 Mandamientos · 03/13 · Álvaro Matximbarrena</figcaption>
-      </figure>
-      <!-- FOTO 11 -->
-      <figure class="sidebar-figura">
-        <a href="https://www.flickr.com/gp/beltzascene2/4u093G82K8" target="_blank">
-          <img src="https://live.staticflickr.com/65535/55146862993_2a2869ad29_h.jpg" alt="Los 10 Mandamientos · Álvaro Matximbarrena" class="sidebar-foto">
-        </a>
-        <figcaption class="sidebar-pie">Los 10 Mandamientos · 04/13 · Álvaro Matximbarrena</figcaption>
-      </figure>
-      <!-- FOTO 10 -->
-      <figure class="sidebar-figura">
-        <a href="https://www.flickr.com/gp/beltzascene2/843J78g6jH" target="_blank">
-          <img src="https://live.staticflickr.com/65535/55146863688_3c623f1946_h.jpg" alt="Los 10 Mandamientos · Álvaro Matximbarrena" class="sidebar-foto">
-        </a>
-        <figcaption class="sidebar-pie">Los 10 Mandamientos · 05/13 · Álvaro Matximbarrena</figcaption>
-      </figure>
-      <!-- FOTO 09 -->
-      <figure class="sidebar-figura">
-        <a href="https://www.flickr.com/gp/beltzascene2/QA1877V5eg" target="_blank">
-          <img src="https://live.staticflickr.com/65535/55146937304_ad95146f67_h.jpg" alt="Los 10 Mandamientos · Álvaro Matximbarrena" class="sidebar-foto">
-        </a>
-        <figcaption class="sidebar-pie">Los 10 Mandamientos · 06/13 · Álvaro Matximbarrena</figcaption>
-      </figure>
-      <!-- FOTO 08 -->
-      <figure class="sidebar-figura">
-        <a href="https://www.flickr.com/gp/beltzascene2/Y94L45Q823" target="_blank">
-          <img src="https://live.staticflickr.com/65535/55147081830_20de1a5dcf_h.jpg" alt="Los 10 Mandamientos · Álvaro Matximbarrena" class="sidebar-foto">
-        </a>
-        <figcaption class="sidebar-pie">Los 10 Mandamientos · 07/13 · Álvaro Matximbarrena</figcaption>
-      </figure>
-      <!-- FOTO 07 -->
-      <figure class="sidebar-figura">
-        <a href="https://www.flickr.com/gp/beltzascene2/EX8un1FB93" target="_blank">
-          <img src="https://live.staticflickr.com/65535/55146937379_befac5b75c_h.jpg" alt="Los 10 Mandamientos · Álvaro Matximbarrena" class="sidebar-foto">
-        </a>
-        <figcaption class="sidebar-pie">Los 10 Mandamientos · 08/13 · Álvaro Matximbarrena</figcaption>
-      </figure>
-      <!-- FOTO 06 -->
-      <figure class="sidebar-figura">
-        <a href="https://www.flickr.com/gp/beltzascene2/no668cDq31" target="_blank">
-          <img src="https://live.staticflickr.com/65535/55145834207_997ca273bb_h.jpg" alt="Los 10 Mandamientos · Álvaro Matximbarrena" class="sidebar-foto">
-        </a>
-        <figcaption class="sidebar-pie">Los 10 Mandamientos · 09/13 · Álvaro Matximbarrena</figcaption>
-      </figure>
-      <!-- FOTO 05 -->
-      <figure class="sidebar-figura">
-        <a href="https://www.flickr.com/gp/beltzascene2/imf0DUC17R" target="_blank">
-          <img src="https://live.staticflickr.com/65535/55146964959_4ff6765a7e_h.jpg" alt="Los 10 Mandamientos · Álvaro Matximbarrena" class="sidebar-foto">
-        </a>
-        <figcaption class="sidebar-pie">Los 10 Mandamientos · 10/13 · Álvaro Matximbarrena</figcaption>
-      </figure>
-      <!-- FOTO 04 -->
-      <figure class="sidebar-figura">
-        <a href="https://www.flickr.com/gp/beltzascene2/J2EL278zu0" target="_blank">
-          <img src="https://live.staticflickr.com/65535/55147129025_536d1c6a5b_b.jpg" alt="Los 10 Mandamientos · Álvaro Matximbarrena" class="sidebar-foto">
-        </a>
-        <figcaption class="sidebar-pie">Los 10 Mandamientos · 11/13 · Álvaro Matximbarrena</figcaption>
-      </figure>
-      <!-- FOTO 03 -->
-      <figure class="sidebar-figura">
-        <a href="https://www.flickr.com/gp/beltzascene2/2N8Nf919PQ" target="_blank">
-          <img src="https://live.staticflickr.com/65535/55163690069_d3bcb35a15_h.jpg" alt="Los 10 Mandamientos · Álvaro Matximbarrena" class="sidebar-foto">
-        </a>
-        <figcaption class="sidebar-pie">Los 10 Mandamientos · 12/13 · Álvaro Matximbarrena</figcaption>
-      </figure>
-      <!-- FOTO 02 -->
-      <figure class="sidebar-figura">
-        <a href="https://www.flickr.com/gp/beltzascene2/7f60s08U0K" target="_blank">
-          <img src="https://live.staticflickr.com/65535/55163622618_8276be65c3_h.jpg" alt="Los 10 Mandamientos · Álvaro Matximbarrena" class="sidebar-foto">
-        </a>
-        <figcaption class="sidebar-pie">Los 10 Mandamientos · 13/13 · Álvaro Matximbarrena</figcaption>
-      </figure>
-      <!-- FOTO 01 -->
-      <figure class="sidebar-figura">
-        <a href="https://www.flickr.com/gp/beltzascene2/370ofRMxSH" target="_blank">
-          <img src="https://live.staticflickr.com/65535/55142537846_229913229e_h.jpg" alt="Los 10 Mandamientos · Álvaro Matximbarrena" class="sidebar-foto">
-        </a>
-        <figcaption class="sidebar-pie">Los 10 Mandamientos por Álvaro Matximbarrena</figcaption>
-      </figure>
-      <!-- FIN FOTOS AM -->
-      <!-- AÑADIR FOTOS AQUÍ — siempre encima de las anteriores -->
-      <!-- FOTO — Astrud Gilberto -->
-      <figure class="sidebar-figura">
-        <a href="https://www.flickr.com/gp/beltzascene2/648PJ01597" target="_blank">
-          <img src="https://live.staticflickr.com/65535/55171980673_e60688061b_h.jpg" alt="Astrud Gilberto · La Chica de Ipanema" class="sidebar-foto">
-        </a>
-        <figcaption class="sidebar-pie">Astrud Gilberto · La Chica de Ipanema</figcaption>
-      </figure>
-      <!-- FOTO — Alton Ellis -->
-      <figure class="sidebar-figura">
-        <a href="https://www.flickr.com/gp/beltzascene2/59Znc2j3w9" target="_blank">
-          <img src="https://live.staticflickr.com/65535/55172055619_6aa6aa3086_b.jpg" alt="Alton Ellis · Rock Steady Army" class="sidebar-foto">
-        </a>
-        <figcaption class="sidebar-pie">Alton Ellis · Rock Steady Army</figcaption>
-      </figure>
-      <!-- FOTO — Marvin Gaye -->
-      <figure class="sidebar-figura">
-        <a href="https://www.flickr.com/gp/beltzascene2/50L6Rf4WH2" target="_blank">
-          <img src="https://live.staticflickr.com/65535/55171956848_dc129f350b_h.jpg" alt="Marvin Gaye · Alma y Soul" class="sidebar-foto">
-        </a>
-        <figcaption class="sidebar-pie">Marvin Gaye · Alma y Soul</figcaption>
-      </figure>
-      <!-- FOTO — Astrud Gilberto -->
-      <!-- FOTO 27 — Dead Kennedys -->
-      <figure class="sidebar-figura">
-        <a href="https://www.flickr.com/gp/beltzascene2/2s53pe6179" target="_blank">
-          <img src="https://live.staticflickr.com/65535/55171390681_36bff36fd7_h.jpg" alt="Dead Kennedys · Los 10 Mandamientos" class="sidebar-foto">
-        </a>
-        <figcaption class="sidebar-pie">Dead Kennedys · Vacaciones inminentes en los Zargos</figcaption>
-      </figure>
-      <!-- FOTO 26 — Girlschool -->
-      <figure class="sidebar-figura">
-        <a href="https://www.flickr.com/gp/beltzascene2/54ibjc8my5" target="_blank">
-          <img src="https://live.staticflickr.com/65535/55170488047_e29e9d09cb_c.jpg" alt="Girlschool · Los 10 Mandamientos" class="sidebar-foto">
-        </a>
-        <figcaption class="sidebar-pie">Girlschool · NWOBHM O MUERTE!!!</figcaption>
-      </figure>
-      <!-- FOTO 25 — Chomsky boca abajo -->
-      <figure class="sidebar-figura">
-        <a href="https://www.flickr.com/gp/beltzascene2/MCK8x5Y499" target="_blank">
-          <img src="https://live.staticflickr.com/65535/55171383561_1bca76913a_b.jpg" alt="Chomsky boca abajo · Los 10 Mandamientos" class="sidebar-foto">
-        </a>
-        <figcaption class="sidebar-pie">Chomsky boca abajo · Anarco-Decepción</figcaption>
-      </figure>
-      <!-- FOTO 24 — Keith Richards & Sly Dunbar -->
-      <figure class="sidebar-figura">
-        <a href="https://www.flickr.com/gp/beltzascene2/J8R265H1L2" target="_blank">
-          <img src="https://live.staticflickr.com/65535/55171769090_d90c4f5a8a_b.jpg" alt="Keith Richards & Sly Dunbar · Los 10 Mandamientos" class="sidebar-foto">
-        </a>
-        <figcaption class="sidebar-pie">Keith Richards · Sly Dunbar · Robbie Shakespeare · Conexión Kingston</figcaption>
-      </figure>
-      <!-- FOTO 23 — Secret Affair -->
-      <figure class="sidebar-figura">
-        <a href="https://www.flickr.com/gp/beltzascene2/R5y24x3d7B" target="_blank">
-          <img src="https://live.staticflickr.com/65535/55171540518_c2e564b85c_b.jpg" alt="Secret Affair · Los 10 Mandamientos" class="sidebar-foto">
-        </a>
-        <figcaption class="sidebar-pie">Secret Affair · Estilo MOD Radical!!!</figcaption>
-      </figure>
-      <!-- FOTO 22 -->
-      <figure class="sidebar-figura">
-        <a href="https://www.flickr.com/gp/beltzascene2/m4124aJMXy" target="_blank">
-          <img src="https://live.staticflickr.com/65535/55171369101_c7432a94ec_h.jpg" alt="Patti Smith · Magazine Punk Rock" class="sidebar-foto">
-        </a>
-        <figcaption class="sidebar-pie">Patti Smith · Magazine Punk Rock</figcaption>
-      </figure>
-      <!-- FOTO 20 — Patti Smith -->
-      <figure class="sidebar-figura">
-        <a href="https://www.flickr.com/gp/beltzascene2/59t62xpGWf" target="_blank">
-          <img src="https://live.staticflickr.com/65535/55170457897_8191a9fcbc_h.jpg" alt="Homme-léopard · Los 10 Mandamientos" class="sidebar-foto">
-        </a>
-        <figcaption class="sidebar-pie">Hombres Leopardo y Mujeres Gato</figcaption>
-      </figure>
-      <!-- FOTO 19 — Liberté -->
-      <figure class="sidebar-figura">
-        <a href="https://www.flickr.com/gp/beltzascene2/B633wgt71a" target="_blank">
-          <img src="https://live.staticflickr.com/65535/55170455162_c38f770ae1_h.jpg" alt="Liberté" class="sidebar-foto">
-        </a>
-        <figcaption class="sidebar-pie">Liberté, Égalité, Fraternité ¿et la diversité?</figcaption>
-      </figure>
-      <!-- FOTO 17 — El Anti-Credo -->
-      <figure class="sidebar-figura">
-        <a href="https://www.flickr.com/gp/beltzascene2/k082Kdq114" target="_blank">
-          <img src="https://live.staticflickr.com/65535/55105126667_4b33c42930_h.jpg" alt="El Anti-Credo · Luis Beltza" class="sidebar-foto">
-        </a>
-        <figcaption class="sidebar-pie">El Anti-Credo · Luis Beltza</figcaption>
-      </figure>
-
-    </div><!-- /mandamientos-col-fotos -->
-
-  </div><!-- /mandamientos-layout -->
+  </div>
 
 </section>
 
+<style>
+  .portadas-marquee { overflow: hidden; width: 100%; background: var(--black); border-top: 10px solid var(--red); border-bottom: 10px solid var(--red); }
+  .portadas-inner { display: flex; animation: portadas-scroll 40s linear infinite; will-change: transform; }
+  .portadas-inner img { height: 240px; width: auto; flex-shrink: 0; display: block; margin-right: 1rem; filter: contrast(1.05); transition: filter 0.3s; }
+  .portadas-inner img:hover { filter: contrast(1.15) grayscale(0); }
+  @keyframes portadas-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+</style>
 
 <div class="portadas-marquee" aria-hidden="true">
   <div class="portadas-inner">
@@ -558,36 +323,6 @@
     <span class="origin">· Tomás Aragüés · Euskal Eresiak Elektronikaz · Herri Gogoa · 1975 ·</span>
   </div>
 </section>
-
-<!-- PORTAL 14 — OTEIZA / LOS APÓSTOLES -->
-<a href="https://flic.kr/p/2s4gySa" target="_blank">
-  <img src="https://live.staticflickr.com/65535/55170955237_80ec8c3d1d_k.jpg" alt="14 · UR-SAPIENS · Jorge Oteiza" style="width:100%; height:auto; display:block; filter:contrast(1.05);">
-</a>
-<div style="background:var(--black); padding:0.8rem clamp(1.5rem,4vw,3rem); text-align:center; border-bottom:1px solid rgba(176,26,26,0.25);">
-  <span style="font-family:'Courier Prime',monospace; font-size:0.9rem; letter-spacing:0.2em; color:var(--amber);">· Arantzazu · Jorge Oteiza · El Último Apóstol · Díscolo · Inadaptado · Desubicado de cualquier credo · Foto: Luis Beltza ·</span>
-</div>
-
-<!-- 14 UR-SAPIENS -->
-<section class="credo" id="ur-sapiens" style="text-align:right;">
-  <div class="credo-header">
-    <span class="credo-number">14</span>
-    <span class="credo-title">UR-SAPIENS</span>
-  </div>
-  <p class="credo-label" style="font-size:1.2rem !important; letter-spacing:0.4em; text-transform:uppercase; color:#7a1212; margin-bottom:3rem;">El Último Apóstol</p>
-
-  <p class="credo-text">UR: TECHNOVISION Y COSMOGONÍA DE UN HALLAZGO DE PALEOLINGÜÍSTICA Y SU POSTERIOR U-SUR-PACIÓN SISTÉMICA.</p>
-
-  <div style="margin-bottom:2.5rem; position:relative; z-index:1;">
-    <img src="https://live.staticflickr.com/65535/55173125591_3066404ecb_o.png" alt="UR-SAPIENS · Símbolo · Luis Beltza" style="width:clamp(260px,40vw,480px); height:clamp(260px,40vw,480px); object-fit:contain; display:block; margin-left:auto;">
-  </div>
-  <div class="credo-pi-line">UR ± H₂O + CH₄ + NH₃ bajo 100.000 atmósferas = SAPIENS A PUNTO DE REÍR</div>
-
-  <div class="credo-divider"></div>
-
-  <p class="credo-cosmos-pi" style="color:var(--muted); font-style:italic; text-align:center; letter-spacing:0.3em; font-size:0.9rem;">· Texto en construcción · El silicio y la neurona punk trabajan · Paciencia cósmica ·</p>
-
-</section>
-
 <img src="https://raw.githubusercontent.com/beltzaexperience/Manifiesto-Beltza/main/jardines-jupiter.jpg" alt="Jardines de Júpiter" style="width:100%; height:auto; display:block;">
 
 <div style="background:var(--black); padding:1.2rem clamp(2rem,8vw,7rem); text-align:center; border-top:1px solid rgba(176,26,26,0.25);">
@@ -603,7 +338,7 @@
   <table style="width:100%; border-collapse:collapse;">
     <tr>
       <td style="font-family:'Bebas Neue',Impact,'Arial Narrow',sans-serif; font-size:clamp(0.95rem,2vw,1.3rem); letter-spacing:0.15em; color:var(--white); white-space:nowrap;">BELTZA RECORDS <span style="color:var(--muted);">·</span> DONOSTIA <span style="color:var(--muted);">_</span> DONEZTEBE</td>
-      <td style="font-family:'Bebas Neue',Impact,'Arial Narrow',sans-serif; font-size:clamp(0.95rem,2vw,1.3rem); letter-spacing:0.15em; text-align:right; white-space:nowrap;"><span style="color:var(--white);">DESDE</span> · <span style="color:#555;">TIK</span> · <span style="color:#555;">DES</span> · <span style="color:#555;">DÈS</span> · <span style="color:#555;">DE</span> · <span style="color:#555;">SINCE</span> · <span style="color:#555;">から</span> · 1990</td>
+      <td style="font-family:'Bebas Neue',Impact,'Arial Narrow',sans-serif; font-size:clamp(0.95rem,2vw,1.3rem); letter-spacing:0.15em; color:var(--amber); text-align:right; white-space:nowrap;"><a href="manifiesto-es.html" style="color:var(--amber);text-decoration:none;font-family:'Bebas Neue',Impact,'Arial Narrow',sans-serif;font-size:clamp(0.95rem,2vw,1.3rem);letter-spacing:0.15em;" target="_blank">DESDE</a> · <a href="manifiesto-eu.html" style="color:var(--amber);text-decoration:none;font-family:'Bebas Neue',Impact,'Arial Narrow',sans-serif;font-size:clamp(0.95rem,2vw,1.3rem);letter-spacing:0.15em;" target="_blank">TIK</a> · <a href="manifiesto-ca.html" style="color:var(--amber);text-decoration:none;font-family:'Bebas Neue',Impact,'Arial Narrow',sans-serif;font-size:clamp(0.95rem,2vw,1.3rem);letter-spacing:0.15em;" target="_blank">DES</a> · <a href="manifiesto-fr.html" style="color:var(--amber);text-decoration:none;font-family:'Bebas Neue',Impact,'Arial Narrow',sans-serif;font-size:clamp(0.95rem,2vw,1.3rem);letter-spacing:0.15em;" target="_blank">DÈS</a> · <a href="manifiesto-pt.html" style="color:var(--amber);text-decoration:none;font-family:'Bebas Neue',Impact,'Arial Narrow',sans-serif;font-size:clamp(0.95rem,2vw,1.3rem);letter-spacing:0.15em;" target="_blank">DE</a> · <a href="manifiesto-en.html" style="color:var(--amber);text-decoration:none;font-family:'Bebas Neue',Impact,'Arial Narrow',sans-serif;font-size:clamp(0.95rem,2vw,1.3rem);letter-spacing:0.15em;" target="_blank">SINCE</a> · <a href="manifiesto-ja.html" style="color:var(--amber);text-decoration:none;font-family:'Bebas Neue',Impact,'Arial Narrow',sans-serif;font-size:clamp(0.95rem,2vw,1.3rem);letter-spacing:0.15em;" target="_blank">から</a> · 1990</td>
     </tr>
     <tr>
       <td style="font-size:0.95rem; letter-spacing:0.3em; text-transform:uppercase; color:var(--muted); padding-top:0.3rem;">Azken Muga of Soul</td>
@@ -615,9 +350,9 @@
   <p style="margin-top:0.8rem; font-size:0.95rem; letter-spacing:0.15em; color:var(--white);">· Logos: Jon Mercero · 13: Luis Beltza ·</p>
 </footer>
 
-<div class="band" style="background:#f0e8d8;" aria-hidden="true">
-  <div class="band-inner" style="color:#1a1a1a; animation-duration:40s;">
-    <span class="band-text" style="color:#1a1a1a;">EXPERIENCIA O MUERTE · π = AMOR · LA MÚSICA ES LO MEJOR — ZAPPA · AZKEN MUGA OF SOUL · REVOLUCIÓN · PASIÓN · CONVICCIÓN · SIN PREJUICIOS NI CATEGORÍAS · HIJOS DEL AGUA · EL SISTEMA ABURRE · LA MÚSICA ENGANCHA · AMOR REVOLUCIONARIO · AUTOGESTIÓN: EL ÚNICO CAMINO · POLVO ESTELAR · BIG BANG · DONEZTEBE ∞ · DONOSTIA · SINCE 1990 · &nbsp;&nbsp;&nbsp;EXPERIENCIA O MUERTE · π = AMOR · LA MÚSICA ES LO MEJOR — ZAPPA · AZKEN MUGA OF SOUL · REVOLUCIÓN · PASIÓN · CONVICCIÓN · SIN PREJUICIOS NI CATEGORÍAS · HIJOS DEL AGUA · EL SISTEMA ABURRE · LA MÚSICA ENGANCHA · AMOR REVOLUCIONARIO · AUTOGESTIÓN: EL ÚNICO CAMINO · POLVO ESTELAR · BIG BANG · DONEZTEBE ∞ · DONOSTIA · SINCE 1990 · &nbsp;&nbsp;&nbsp;</span>
+<div class="band" aria-hidden="true">
+  <div class="band-inner">
+    <span class="band-text">EXPERIENCIA O MUERTE · AZKEN MUGA OF SOUL · AMOR REVOLUCIONARIO · HIJOS DEL AGUA · POLVO ESTELAR · BIG BANG · DONEZTEBE ∞ · DONOSTIA · SINCE 1990 · &nbsp;&nbsp;&nbsp;EXPERIENCIA O MUERTE · AZKEN MUGA OF SOUL · AMOR REVOLUCIONARIO · HIJOS DEL AGUA · POLVO ESTELAR · BIG BANG · DONEZTEBE ∞ · DONOSTIA · SINCE 1990 · &nbsp;&nbsp;&nbsp;</span>
   </div>
 </div>
 
@@ -684,37 +419,12 @@
 </section>
 
 <script>
-  // SELECTOR MÓVIL TEXTO/FOTOS
-  function cambiarVista(val) {
-    const texto = document.getElementById('col-texto');
-    const fotos = document.getElementById('col-fotos');
-    if (val === 'fotos') {
-      texto.classList.add('oculto');
-      fotos.classList.add('visible');
-    } else {
-      texto.classList.remove('oculto');
-      fotos.classList.remove('visible');
-    }
-  }
-
   const obs = new IntersectionObserver(entries => {
     entries.forEach((e,i) => {
       if (e.isIntersecting) setTimeout(() => e.target.classList.add('visible'), i * 130);
     });
   }, { threshold: 0.12 });
   document.querySelectorAll('.mandamiento').forEach(el => obs.observe(el));
-
-  // Click to pause/resume marquees
-  const marqueeEls = [
-    ...document.querySelectorAll('.band-inner'),
-    ...document.querySelectorAll('.portadas-inner')
-  ];
-  marqueeEls.forEach(el => {
-    el.addEventListener('click', () => {
-      el.style.animationPlayState =
-        el.style.animationPlayState === 'paused' ? 'running' : 'paused';
-    });
-  });
 </script>
 </body>
 </html>
