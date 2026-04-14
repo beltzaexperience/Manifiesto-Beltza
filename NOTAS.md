@@ -115,3 +115,30 @@ Todas las apariciones del fonema "ur" en el texto van en rojo `<span style="colo
 - **Magic Bus:** https://github.com/beltzaexperience/magic-bus
 - **UR-book:** pendiente de repo propio
 - **Beltza Records:** https://www.beltzarecords.com
+
+---
+
+## Fotos Flickr — regla de URLs estables
+Las URLs de Flickr tienen sufijos que indican el tamaño. Algunos son más estables que otros:
+
+**✅ Estables (usar siempre):**
+- `_b.jpg` — large (1024px)
+- `_c.jpg` — medium 800
+- `_h.jpg` — large 1600
+- `_k.jpg` — large 2048
+- `_z.jpg` — medium 640
+
+**⚠️ Riesgo (evitar si es posible):**
+- `_o.jpg` — original — puede desactivarse si el autor cambia privacidad
+
+**Actuales con `_o.jpg` en el Manifiesto (marquee portadas):**
+- Mito y Comadre: `55162102986_ffb3f7933a_o.jpg`
+- Arturo Somohano: `55162639962_44bf0b3b75_o.jpg`
+- Anima Latina Vol.2: `55163786469_4d1d9cb992_o.jpg`
+
+Si alguna desaparece, buscar versión `_b.jpg` o `_h.jpg` de la misma foto.
+
+## Fotos sidebar — orden y secciones
+1. Serie Álvaro Matxinbarrena (El Amanecer, Humor y Amanecer, 01/13 → 15/15, foto general)
+2. **LEY BELTZA** (justo después): The Clash, The Beat 1979, Evelyn Hofer NY 1975, Liudmila Pavlichenko
+3. Astrud Gilberto, Alton Ellis, Marvin Gaye, Dead Kennedys, Girlschool, Chomsky...
