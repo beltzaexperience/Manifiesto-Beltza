@@ -71,9 +71,9 @@ footer { background:var(--black); border-top:1px solid rgba(176,26,26,0.35); pad
 .sidebar-figura { margin:0 0 2rem 0; border:1px solid #1e1e1e; }
 .sidebar-pie { font-family:'Courier Prime',monospace; font-size:0.85rem; letter-spacing:0.12em; color:var(--muted); padding:0.5rem 0.7rem; border-top:1px solid #1e1e1e; background:#0d0d0d; }
 .sidebar-pie a { color:var(--amber); text-decoration:none; }
-.portadas-marquee { overflow:hidden; width:100%; background:var(--black); border-top:3px solid var(--red); border-bottom:3px solid var(--red); cursor:pointer; }
-.portadas-inner { display:flex; animation:portadas-scroll 40s linear infinite; will-change:transform; }
-.portadas-inner img { height:240px; width:auto; flex-shrink:0; display:block; margin-right:1rem; filter:contrast(1.05); transition:filter 0.3s; }
+.portadas-marquee { overflow:hidden; width:100%; background:var(--black); border-top:3px solid var(--red); border-bottom:3px solid var(--red); cursor:pointer; white-space:nowrap; }
+.portadas-inner { display:inline-flex; animation:portadas-scroll 40s linear infinite; will-change:transform; }
+.portadas-inner img { height:clamp(120px,20vw,240px); width:auto; flex-shrink:0; display:block; margin-right:0.5rem; filter:contrast(1.05); transition:filter 0.3s; }
 @keyframes portadas-scroll { from{transform:translateX(0)} to{transform:translateX(-50%)} }
 .selector-movil { display:none; font-family:'Bebas Neue',Impact,'Arial Narrow',sans-serif; font-size:clamp(0.95rem,2vw,1.3rem); letter-spacing:0.15em; background:var(--black); color:var(--amber); border:1px solid #333; padding:0.1em 0.4em; cursor:pointer; outline:none; }
 .selector-movil option { background:var(--black); color:var(--amber); }
@@ -82,7 +82,10 @@ footer { background:var(--black); border-top:1px solid rgba(176,26,26,0.35); pad
   .topband td + td { padding-top:0.4rem; }
   footer table, footer tr, footer td { display:block; text-align:left !important; white-space:normal !important; }
   footer td + td { padding-top:0.4rem; }
-  .brand-slash .b-beltza, .brand-slash .b-exp { font-size:clamp(2rem,8vw,3.5rem); }
+  .brand-slash { flex-wrap:nowrap; padding:0.55em clamp(0.8rem,4vw,2rem); gap:0.2em; overflow:hidden; }
+  .brand-slash .b-beltza, .brand-slash .b-exp { font-size:clamp(1.4rem,6vw,2.5rem); }
+  .brand-slash--top { padding-top:0.6em; padding-bottom:0.6em; }
+  .brand-slash img { height:clamp(1.8rem,7vw,3rem) !important; }
   .hero-subtitle { font-size:clamp(2.5rem,8vw,4rem); }
 }
 @media (max-width:800px) {
